@@ -6,23 +6,24 @@ Call this endpoint to initiate a withdrawal
 https://kbx/kubitx.com/prow/x/transfer/withdraw
 ```
 
-## Request Parameters
-Name|Description
-----|-----------
-asset_code|asset code of token to withdraw 
-dest|account number/MoMo
-dest_extra|destination bank code 
-memo|Name on the account number/MoMo 
-branch_code|bank branch code only for GHCX asset(optional)
-
 ### Sample Request URL
 ```
 https://kbx/kubitx.com/prow/x/transfer/withdraw?asset_code=GHCX&dest=1234567890&dest_extra=058&memo=Joe Olu&branch_code
 ```
+## Request Parameters
+Name|Description
+----|-----------
+asset_code|Asset code of token to withdraw 
+dest|Account number/MoMo
+dest_extra|Destination bank code 
+memo|Name on the account number/MoMo 
+branch_code|Bank branch code only for GHCX asset
+
 
 
 # Sample Response
 A successful withdrawal request will return the following JSON encoded response
+
 **HTTP 200 OK**
 ```javascript
 {
