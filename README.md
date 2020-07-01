@@ -43,4 +43,4 @@ memo_type|Stellar memo type id, text, hash
 min_amount|Minimum amount to withdraw
 max_amount|Maximum amount to withdraw
 memo|Stellar memo
-fee_percent|Percentage Fee that will charged for the withdrawal
+fee_percent|Percentage Fee that will be charged for the withdrawal
