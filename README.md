@@ -1,6 +1,11 @@
 # Withdrawals-API
 
 # Withdrawal Request
+Base URL
+```
+https://kbx/kubitx.com/prow/x/transfer/withdraw
+```
+
 Call this endpoint to initiate a withdrawal
 ```
 https://kbx/kubitx.com/prow/x/transfer/withdraw?asset_code=GHCX&dest=1234567890&dest_extra=058&memo=Joe Olu&branch_code
@@ -13,7 +18,7 @@ asset_code|asset code of token to withdraw
 dest|account number/MoMo
 dest_extra|destination bank code 
 memo|Name on the account number/MoMo 
-branch_code|bank branch code only for GHCX asset 
+branch_code|bank branch code only for GHCX asset(optional)
 
 
 # Sample Response
