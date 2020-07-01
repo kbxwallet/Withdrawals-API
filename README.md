@@ -39,8 +39,8 @@ A successful withdrawal request will return the following JSON encoded response
 Response Fields|Description
 ----|----------------------
 account_id|Stellar public key address
-memo_type|Stellar memo type id, text, hash (optional)
+memo_type|Stellar memo type id, text, hash
 min_amount|Minimum amount to withdraw
 max_amount|Maximum amount to withdraw
-memo|Stellar memo (optional)
-fee_percent|Percentage Fee charged for this transaction, fee = fee_percent * amount to withdraw
+memo|Stellar memo
+fee_percent|Percentage Fee that will charged for the withdrawal
