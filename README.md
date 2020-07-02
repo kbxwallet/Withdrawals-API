@@ -39,7 +39,7 @@ memo_type|Stellar memo type id, text, hash
 min_amount|Minimum amount to withdraw
 max_amount|Maximum amount to withdraw
 memo|Stellar memo
-fee_percent|Percentage Fee that will be charged for the withdrawal
+fee_percent|Percentage Fee that will be charged for the withdrawal  
 
 ## Endpoint to fetch List of Banks
 ```
@@ -135,8 +135,8 @@ data|List of Banks
 meta|List of countries [can be used to segment/filter the list of banks by country]
 id|The bankId field [to be used to fetch the list of branches for banks that have hasBranch == true]
 code|The code for the bank [to be provided as a param in the Withdraw Request]
-
-
+  
+  
 ## Endpoint to fetch Branch Codes for GHCX Withdrawals
 ```
 https://kbx.kubitx.com/prow/x/transfer/bank-branch/{bankId}
@@ -192,8 +192,8 @@ branch_code|The branch code for the bank [to be provided as a in the Withdraw Re
 branch_name|The branch name for the bank
 
 
-
-
+  
+  
 # Send Funds to account_id from 1
 To complete the Withdrawal Request, send the Gross Amount [Amount to be withdrawn + fees] in the asset code being withdrawn to the account_id returned by https://kbx.kubitx.com/prow/x/transfer/withdraw from #1 using the memo returned in the response
 
