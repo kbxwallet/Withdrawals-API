@@ -1,6 +1,6 @@
 # Withdrawals-API
 
-## * Withdrawal Request
+* ## Withdrawal Request
 Call this endpoint to initiate a withdrawal
 ```
 https://kbx.kubitx.com/prow/x/transfer/withdraw
@@ -41,7 +41,7 @@ max_amount|Maximum amount to withdraw
 memo|Stellar memo
 fee_percent|Percentage Fee that will be charged for the withdrawal
 
-## ** Endpoint to fetch List of Banks
+** ## Endpoint to fetch List of Banks
 ```
 https://kbx.kubitx.com/prow/x/transfer/banks
 ```
@@ -52,27 +52,98 @@ A successful withdrawal request will return the following JSON encoded response
 **HTTP 200 OK**
 ```javascript
 {
-    "account_id": "GCDPFG7HMUFPMLVKBGZGLHZH4MYSPMT5TXZJHAYHS7XRQTHXZEQ4CPLI",
-    "memo_type": "text",
-    "min_amount": "500",
-    "max_amount": 20000.0,
-    "memo": "1733T4612284251",
-    "fee_percent": 0.01
+    "data": [
+        {
+            "id": 1,
+            "title": "ACCESS BANK PLC",
+            "code": "044",
+            "currency": "NGN",
+            "country": "NG",
+            "hasBranch": false,
+            "isMomo": false
+        },
+        {
+            "id": 2,
+            "title": "CITI BANK",
+            "code": "023",
+            "currency": "NGN",
+            "country": "NG",
+            "hasBranch": false,
+            "isMomo": false
+        },
+        .
+        .
+        .
+        {
+            "id": 20,
+            "title": "ZENITH BANK PLC",
+            "code": "057",
+            "currency": "NGN",
+            "country": "NG",
+            "hasBranch": false,
+            "isMomo": false
+        },
+        {
+            "id": 24,
+            "title": "Vodafone Mobile Money",
+            "code": "VODAFONE",
+            "currency": "GHS",
+            "country": "GH",
+            "hasBranch": false,
+            "isMomo": true
+        },
+        {
+            "id": 25,
+            "title": "Airtel Mobile Money",
+            "code": "AIR",
+            "currency": "GHS",
+            "country": "GH",
+            "hasBranch": false,
+            "isMomo": true
+        },
+        {
+            "id": 28,
+            "title": "ECOBANK",
+            "code": "GH130100",
+            "currency": "GHS",
+            "country": "GH",
+            "hasBranch": true,
+            "isMomo": false
+        }
+    ],
+    "meta": {
+        "countries": [
+            {
+                "code": "NG",
+                "prefix": "234",
+                "name": "Nigeria"
+            },
+            {
+                "code": "GH",
+                "prefix": "233",
+                "name": "Ghana"
+            }
+        ]
+    },
+    "status": "success"
 }
 ```
 
 Response Fields|Description
 ----|----------------------
-banks|List of Banks
+data|List of Banks
+meta|List of countries [can be used to segment/filter the list of banks by country]
+id|The bankId field [to be used to fetch the list of branches for banks that have hasBranch == true]
+code|The code for the bank [to be provided as a param in the Withdraw Request]
 
 
-## ** Endpoint to fetch Branch Codes for GHCX Withdrawals
+** ## Endpoint to fetch Branch Codes for GHCX Withdrawals
 ```
 https://kbx.kubitx.com/prow/x/transfer/bank-branch/{bankId}
 ```
 ### Sample Request URL
 ```
-https://kbx.kubitx.com/prow/x/transfer/bank-branch/10123
+https://kbx.kubitx.com/prow/x/transfer/bank-branch/28
 ```
 ### Request Parameters
 Name|Description
@@ -85,28 +156,49 @@ A successful request will return the following JSON encoded response
 **HTTP 200 OK**
 ```javascript
 {
-    "account_id": "GCDPFG7HMUFPMLVKBGZGLHZH4MYSPMT5TXZJHAYHS7XRQTHXZEQ4CPLI",
-    "memo_type": "text",
-    "min_amount": "500",
-    "max_amount": 20000.0,
-    "memo": "1733T4612284251",
-    "fee_percent": 0.01
+    "data": [
+        {
+            "branch_code": "GH130998",
+            "branch_name": "System Branch"
+        },
+        {
+            "branch_code": "GH130101",
+            "branch_name": "ECOBANK GH ACCRA MAIN"
+        },
+        {
+            "branch_code": "GH130103",
+            "branch_name": "ECOBANK GH RING ROAD"
+        },
+        .
+        .
+        .
+        {
+            "branch_code": "GH130155",
+            "branch_name": "ECOBANK(GH)LTD- FIRST NAT SAV AND LOANS"
+        },
+        {
+            "branch_code": "GH130159",
+            "branch_name": "ECOBANK (GH) LTD-FIRST ALLIED SAV AND LO"
+        }
+    ],
+    "status": "success"
 }
 ```
 
 Response Fields|Description
 ----|----------------------
-branch_codes|List of Branch Codes for the selected Bank
+data|List of Branch Data for the selected Bank
+branch_code|The branch code for the bank [to be provided as a in the Withdraw Request][optional]
+branch_name|The branch name for the bank
 
 
 
 
-
-# * Send Funds to account_id from 1
+* # Send Funds to account_id from 1
 To complete the Withdrawal Request, send the Gross Amount [Amount to be withdrawn + fees] in the asset code being withdrawn to the account_id returned by https://kbx.kubitx.com/prow/x/transfer/withdraw from #1 using the memo returned in the response
 
 
-## ** Withdrawal Completion
+** ## Withdrawal Completion
 Once the payment from 2 above is received, the withdrawal request will be processed and funds transferred to the destination Bank or MoMo account
 
 
