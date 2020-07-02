@@ -1,6 +1,6 @@
 # Withdrawals-API
 
-## 1. Withdrawal Request
+## * Withdrawal Request
 Call this endpoint to initiate a withdrawal
 ```
 https://kbx.kubitx.com/prow/x/transfer/withdraw
@@ -41,7 +41,7 @@ max_amount|Maximum amount to withdraw
 memo|Stellar memo
 fee_percent|Percentage Fee that will be charged for the withdrawal
 
-## 1.1 Endpoint to fetch List of Banks
+## ** Endpoint to fetch List of Banks
 ```
 https://kbx.kubitx.com/prow/x/transfer/banks
 ```
@@ -66,7 +66,7 @@ Response Fields|Description
 banks|List of Banks
 
 
-## 1.2 Endpoint to fetch Branch Codes for GHCX Withdrawals
+## ** Endpoint to fetch Branch Codes for GHCX Withdrawals
 ```
 https://kbx.kubitx.com/prow/x/transfer/bank-branch/{bankId}
 ```
@@ -102,11 +102,11 @@ branch_codes|List of Branch Codes for the selected Bank
 
 
 
-# 2. Send Funds to account_id from 1
+# * Send Funds to account_id from 1
 To complete the Withdrawal Request, send the Gross Amount [Amount to be withdrawn + fees] in the asset code being withdrawn to the account_id returned by https://kbx.kubitx.com/prow/x/transfer/withdraw from #1 using the memo returned in the response
 
 
-## 2.1 Withdrawal Completion
+## ** Withdrawal Completion
 Once the payment from 2 above is received, the withdrawal request will be processed and funds transferred to the destination Bank or MoMo account
 
 
