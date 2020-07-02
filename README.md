@@ -191,7 +191,7 @@ A successful request will return the following JSON encoded response
 Response Fields|Description
 ----|----------------------
 data|List of Branch Data for the selected Bank
-branch_code|The branch code for the bank [to be provided as a in the Withdraw Request][optional]
+branch_code|The branch code for the bank; to be provided as a parameter in the [Withdraw Request](#endpoint-to-fetch-list-of-banks)
 branch_name|The branch name for the bank
 
 ---  
