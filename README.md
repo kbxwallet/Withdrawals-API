@@ -1,6 +1,6 @@
 # Withdrawals-API
 
-* ## Withdrawal Request
+## Withdrawal Request
 Call this endpoint to initiate a withdrawal
 ```
 https://kbx.kubitx.com/prow/x/transfer/withdraw
@@ -41,7 +41,7 @@ max_amount|Maximum amount to withdraw
 memo|Stellar memo
 fee_percent|Percentage Fee that will be charged for the withdrawal
 
-** ## Endpoint to fetch List of Banks
+## Endpoint to fetch List of Banks
 ```
 https://kbx.kubitx.com/prow/x/transfer/banks
 ```
@@ -137,7 +137,7 @@ id|The bankId field [to be used to fetch the list of branches for banks that hav
 code|The code for the bank [to be provided as a param in the Withdraw Request]
 
 
-** ## Endpoint to fetch Branch Codes for GHCX Withdrawals
+## Endpoint to fetch Branch Codes for GHCX Withdrawals
 ```
 https://kbx.kubitx.com/prow/x/transfer/bank-branch/{bankId}
 ```
@@ -150,7 +150,7 @@ Name|Description
 ----|-----------
 bankId|bankId for a specific bank from the request made to retrieve banks in 1.1 above
 
-# Sample Response
+### Sample Response
 A successful request will return the following JSON encoded response
 
 **HTTP 200 OK**
@@ -194,7 +194,7 @@ branch_name|The branch name for the bank
 
 
 
-* # Send Funds to account_id from 1
+# Send Funds to account_id from 1
 To complete the Withdrawal Request, send the Gross Amount [Amount to be withdrawn + fees] in the asset code being withdrawn to the account_id returned by https://kbx.kubitx.com/prow/x/transfer/withdraw from #1 using the memo returned in the response
 
 
