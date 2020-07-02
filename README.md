@@ -3,12 +3,12 @@
 # Withdrawal Request
 Call this endpoint to initiate a withdrawal
 ```
-https://kbx/kubitx.com/prow/x/transfer/withdraw
+https://kbx.kubitx.com/prow/x/transfer/withdraw
 ```
 
 ### Sample Request URL
 ```
-https://kbx/kubitx.com/prow/x/transfer/withdraw?asset_code=GHCX&dest=1234567890&dest_extra=058&memo=Joe Olu&branch_code
+https://kbx.kubitx.com/prow/x/transfer/withdraw?asset_code=GHCX&dest=1234567890&dest_extra=058&memo=Joe Olu&branch_code
 ```
 ## Request Parameters
 Name|Description
