@@ -14,9 +14,9 @@ Name|Description
 ----|-----------
 asset_code|Asset code of token to withdraw 
 dest|Account number/MoMo
-dest_extra|Destination bank code 
+dest_extra|Destination bank code [optional for withdrawals to a MoMo account or banks that have isMomo == false]
 memo|Name on the account number/MoMo 
-branch_code|Bank branch code only for GHCX asset[optional]
+branch_code|Bank branch code only for GHCX asset[optional for withdrawals to a MoMo account or banks that have hasBranch == false]
 
 ### Sample Response
 A successful withdrawal request will return the following JSON encoded response
