@@ -1,6 +1,6 @@
 # Withdrawals-API
 
-## Withdrawal Request
+## 1. Withdrawal Request
 Call this endpoint to initiate a withdrawal
 ```
 https://kbx.kubitx.com/prow/x/transfer/withdraw
@@ -40,7 +40,7 @@ min_amount|Minimum amount to withdraw
 max_amount|Maximum amount to withdraw
 memo|Stellar memo
 fee_percent|Percentage Fee that will be charged for the withdrawal  
-
+<br/><br/>
 ## Endpoint to fetch List of Banks
 ```
 https://kbx.kubitx.com/prow/x/transfer/banks
