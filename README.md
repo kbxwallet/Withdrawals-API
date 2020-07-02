@@ -191,12 +191,12 @@ A successful request will return the following JSON encoded response
 Response Fields|Description
 ----|----------------------
 data|List of Branch Data for the selected Bank
-branch_code|The branch code for the bank; to be provided as a parameter in the [Withdraw Request](#endpoint-to-fetch-list-of-banks)
+branch_code|The branch code for the bank; to be provided as a parameter in the [Withdraw Request](https://github.com/kbxwallet/Withdrawals-API#1-withdrawal-request)
 branch_name|The branch name for the bank
 
 ---  
   
-# 2. Send Funds to account_id from [1](https://github.com/kbxwallet/Withdrawals-API#1-withdrawal-request)
+# 2. Send Funds to account_id from the [response](https://github.com/kbxwallet/Withdrawals-API#sample-response) from the Withdraw Request
 To complete the Withdrawal Request, send the Gross Amount [Amount to be withdrawn + fees] in the asset code being withdrawn to the account_id returned by https://kbx.kubitx.com/prow/x/transfer/withdraw from #1 using the memo returned in the response
 
 
