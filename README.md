@@ -196,7 +196,7 @@ branch_name|The branch name for the bank
 
 ---  
   
-# 2. Send Funds to account_id from the [response](https://github.com/kbxwallet/Withdrawals-API#sample-response) from the Withdraw Request
+## 2. Send Funds to account_id from the [response](https://github.com/kbxwallet/Withdrawals-API#sample-response) from the Withdraw Request
 
 To complete the Withdrawal Request, send the Gross Amount [Amount to be withdrawn + fees(fee_percent * amount)] in the asset code being withdrawn to the account_id using the memo returned in the response
 
