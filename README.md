@@ -197,13 +197,14 @@ branch_name|The branch name for the bank
 ---  
   
 # 2. Send Funds to account_id from the [response](https://github.com/kbxwallet/Withdrawals-API#sample-response) from the Withdraw Request
-To complete the Withdrawal Request, send the Gross Amount [Amount to be withdrawn + fees] in the asset code being withdrawn to the account_id returned by https://kbx.kubitx.com/prow/x/transfer/withdraw from #1 using the memo returned in the response
+
+To complete the Withdrawal Request, send the Gross Amount [Amount to be withdrawn + fees(fee_percent * amount)] in the asset code being withdrawn to the account_id using the memo returned in the response
 
 
-** ## Withdrawal Completion
+## Withdrawal Completion
 Once the payment from 2 above is received, the withdrawal request will be processed and funds transferred to the destination Bank or MoMo account
 
-
+---
 
 ## Response Error Codes
 A failed request for any of the APIs will result in one of the following HTTP response error codes.
