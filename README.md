@@ -14,7 +14,7 @@ Name|Description
 ----|-----------
 asset_code|Asset code of token to withdraw 
 dest|Account number/MoMo
-dest_extra|Destination bank code [optional for withdrawals to a MoMo account (isMomo == true)]
+dest_extra|Destination bank code
 memo|Name on the account number/MoMo 
 branch_code|Bank branch code only for GHCX asset [optional for withdrawals to a MoMo account or banks that have hasBranch == false]
 
